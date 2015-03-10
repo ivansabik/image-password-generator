@@ -20,10 +20,9 @@ class CliFunctionalTest(unittest.TestCase):
 	def test_invalid_cli_options(self):
 		# Invalid options passed outputs error
 		try:
-			cli_response =  subprocess.check_output(['python','image-pwd-generator.py', '-y'], stderr=subprocess.STDOUT)
+			cli_response =  subprocess.check_output(['python','../image-pwd-generator.py', '-y'], stderr=subprocess.STDOUT)
 			self.fail('Did not output error for unrecognized arguments')
 		except subprocess.CalledProcessError, e:
-			print e.output
 			assert 'unrecognized arguments' in e.output
 	
 	def test_existing_file_confirmation(self):
