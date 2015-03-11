@@ -1,12 +1,31 @@
-# img-pass-generator
+# Image password generator
 [![Build Status](https://travis-ci.org/ivansabik/img-pass-generator.svg)](https://travis-ci.org/ivansabik/img-pass-generator)
 
-PNG password generator to share safer on the internets
+Image password generator generates random passwords in images for sharing via e-mail on a safer way. It also supports generating an image for a password. Uses https://github.com/sebdah/password-generator for generating random password strings.
 
-Run tests: 
+### Installation
 
-python -m unittest discover
+To install globally:
 
-We don't wanna reinvent the wheel here so we sit on top of giants:
+- Give permissions for the file with ```chmod +x image-pwd-generator```
+- Copy script``cp image-pwd-generator /usr/local/bin/```
+- Use it with ```image-pwd-generator``` 
 
-- https://github.com/sebdah/password-generator
+Alternatively you run it in the folder where you downloaded it with ```python image-pwd-generator``` or ```./image-pwd-generator```
+
+### Usage
+
+```
+usage: image-pwd-generator.py [-h] [-d DESTINATION] [-p PASSWORD]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -d DESTINATION, --destination DESTINATION
+                        File destination
+  -p PASSWORD, --password PASSWORD
+                        Text for password, blank for generating random
+```
+
+### Run tests
+
+To run the tests: ```python -m unittest discover```

@@ -4,7 +4,7 @@ import os
 import re
 
 DEFAULT_IMG_FILE = './info.png'
-CLI_SCRIPT = './image-pwd-generator.py' # Change if tests runned from ./tests
+CLI_SCRIPT = './image-pwd-generator' # Change if tests runned from ./tests
 PASS_FOR_INPUT_TEST = 'MySuperSecretPass'
 
 class CliFunctionalTest(unittest.TestCase):
@@ -31,7 +31,10 @@ class CliFunctionalTest(unittest.TestCase):
 		# An image is created with the password at ./info.png
 		# Output in CLI contains a success
 		global CLI_SCRIPT, PASS_FOR_INPUT_TEST
-		cli_response =  subprocess.check_output(['python', CLI_SCRIPT, '-p', PASS_FOR_INPUT_TEST], stderr=subprocess.STDOUT)
+		try:
+			cli_response =  subprocess.check_output(['python', CLI_SCRIPT, '-p', PASS_FOR_INPUT_TEST], 					stderr=subprocess.STDOUT)
+		except subprocess.CalledProcessError, e:
+			print e.output
 		assert PASS_FOR_INPUT_TEST in cli_response
 		assert os.path.isfile(DEFAULT_IMG_FILE), 'Image file not found: %s' % DEFAULT_IMG_FILE
 		
