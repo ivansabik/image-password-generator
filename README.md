@@ -1,5 +1,5 @@
 # Image password generator
-[![Build Status](https://travis-ci.org/ivansabik/image-pass-generator.svg)](https://travis-ci.org/ivansabik/image-pass-generator)
+[![Build Status](https://travis-ci.org/ivansabik/image-password-generator.svg)](https://travis-ci.org/ivansabik/image-password-generator)
 
 Image password generator generates random passwords in images for sharing via e-mail on a safer way. It also supports generating an image for a password. Uses https://github.com/sebdah/password-generator for generating random password strings.
 
