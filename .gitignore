@@ -1,5 +1,7 @@
 *~
 ~png
+test-output
+output-passwords
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

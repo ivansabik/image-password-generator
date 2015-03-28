@@ -5,25 +5,23 @@ Image password generator generates random passwords in images for sharing via e-
 
 ### Installation
 
-To install globally:
-
-- Give permissions for the file with ```chmod +x image-pwd-generator```
-- Copy script``cp image-pwd-generator /usr/local/bin/```
-- Use it with ```image-pwd-generator``` 
-
-Alternatively you run it in the folder where you downloaded it with ```python image-pwd-generator``` or ```./image-pwd-generator```
+Install dependencies with ```pip install -r requirements.txt```.
+You may need ```sudo apt-get install python-cairosvg```
 
 ### Usage
 
 ```
-usage: image-pwd-generator.py [-h] [-d DESTINATION] [-p PASSWORD]
+usage: image-pwd.py [-h] [-d DESTINATION] [-p PASSWORD] [-u USERNAME]
 
 optional arguments:
   -h, --help            show this help message and exit
   -d DESTINATION, --destination DESTINATION
-                        File destination
+                        Output folder default is ./output-passwords/
   -p PASSWORD, --password PASSWORD
-                        Text for password, blank for generating random
+                        Password, if blank generates random
+  -u USERNAME, --username USERNAME
+                        Username associated with the password, if blank
+                        generates random
 ```
 
 ### Run tests
