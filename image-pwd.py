@@ -13,7 +13,7 @@ parser.add_argument('-d', '--destination',
 parser.add_argument('-p', '--password',
     help='Password, if blank generates random', default='')
 parser.add_argument('-u', '--username',
-    help='Username associated with the password, if blank generates random', default='')
+    help='Username associated with the password, if blank generates only password', default='')
     
 args = vars(parser.parse_args())
 
@@ -32,28 +32,28 @@ if not args['username']:
 else:
     username = args['username']
     
-filename = img_location + password + '.png'
+filename = img_location + username + password + '.png'
 font_size_title, font_size_text = 10, 20
 x_size_px = len(password) * 16.5
 dwg = svgwrite.Drawing(filename, (x_size_px, 50))
 dwg.add(dwg.rect(insert=(0, 0), size=('100%', '100%'), fill='white'))
 
 if not username:
-	dwg.add(dwg.text(password, insert=('5%', '20%'),
+	dwg.add(dwg.text(password, insert=('5%', '60%'),
 		font_family="serif",
 		font_size=font_size_text,
 		font_weight='bold',
 		fill='black'))
 	sucess_msg = 'Generated image for password ' + password+ '\nFile saved in ' + img_location
 else:
-	dwg.add(dwg.text(password, insert=('5%', '20%'),
+	dwg.add(dwg.text(username, insert=('5%', '40%'),
 		font_family="serif",
-		font_size=font_size_text/2,
+		font_size=font_size_text * 0.9,
 		font_weight='bold',
 		fill='black'))
-	dwg.add(dwg.text(password, insert=('10%', '40%'),
+	dwg.add(dwg.text(password, insert=('5%', '80%'),
 		font_family="serif",
-		font_size=font_size_text/2,
+		font_size=font_size_text * 0.9,
 		font_weight='bold',
 		fill='black'))
 	sucess_msg = 'Generated image for user ' + username + ' and password ' + password + '\nFile saved in ' + img_location

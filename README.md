@@ -21,8 +21,26 @@ optional arguments:
                         Password, if blank generates random
   -u USERNAME, --username USERNAME
                         Username associated with the password, if blank
-                        generates random
+                        generates only password
 ```
+
+### Examples
+
+#### python image-pwd.py
+
+<img src="https://raw.githubusercontent.com/ivansabik/image-password-generator/master/doc/tgT8M9HONS6e.png">
+
+#### python image-pwd.py -p K3nnw0r7hy
+
+<img src="https://raw.githubusercontent.com/ivansabik/image-password-generator/master/doc/K3nnw0r7hy.png">
+
+#### python image-pwd.py -u kenny -p K3nnw0r7hy
+
+<img src="https://raw.githubusercontent.com/ivansabik/image-password-generator/master/doc/kennyK3nnw0r7hy.png">
+
+#### python image-pwd.py -u kenny
+
+<img src="https://raw.githubusercontent.com/ivansabik/image-password-generator/master/doc/kennyDzdxEpwoNiVt.png">
 
 ### Run tests
 
