@@ -8,6 +8,12 @@ Image password generator generates random passwords in images for sharing via e-
 Install dependencies with ```pip install -r requirements.txt```.
 You may need ```sudo apt-get install python-cairosvg```
 
+If you want to have the script globally accesible:
+
+```sudo chmod +x image-pwd.py; sudo mv image-pwd.py /usr/local/bin/image-pwd```
+
+Then simply try ```image-pwd```
+
 ### Usage
 
 ```
